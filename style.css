@@ -19,7 +19,7 @@ video {
 }
 
 .poll-overlay {
-  display: none; /* only need once */
+  display: none;
   position: absolute;
   top: 30%;
   left: 50%;
@@ -30,6 +30,7 @@ video {
   flex-direction: column;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 80%;
 }
 
 .poll-overlay button {
@@ -44,4 +45,23 @@ video {
 
 .poll-overlay button:hover {
   background: #0056b3;
+}
+
+/* Instagram-style result bars */
+.bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 8px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.fill {
+  background: #007bff;
+  color: white;
+  padding: 4px;
+  border-radius: 8px;
+  text-align: center;
+  width: 0;
+  transition: width 0.6s ease;
 }
