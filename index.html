@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Video Poll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="video-container">
+    <video id="myVideo" controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+
+    <!-- Poll overlay -->
+    <div id="poll" class="poll-overlay">
+      <h3>What do you think?</h3>
+      <button onclick="submitVote('Option A')">Option A</button>
+      <button onclick="submitVote('Option B')">Option B</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
