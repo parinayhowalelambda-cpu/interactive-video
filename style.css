@@ -19,6 +19,7 @@ video {
 }
 
 .poll-overlay {
+  display: none; /* only need once */
   position: absolute;
   top: 30%;
   left: 50%;
@@ -26,7 +27,6 @@ video {
   background: rgba(255,255,255,0.95);
   padding: 20px;
   border-radius: 12px;
-  display: none;
   flex-direction: column;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
