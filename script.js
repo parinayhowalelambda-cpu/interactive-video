@@ -6,9 +6,9 @@ const results = document.getElementById('results');
 let votes = { "No Clue": 0, "Its Clobbering time": 0 };
 let totalVotes = 0;
 
-// Show poll at specific time (example: 5s)
+// Show poll at specific time (example: 0.21s)
 video.addEventListener('timeupdate', () => {
-  if (video.currentTime >= 5 && poll.style.display === "none" && results.style.display === "none") {
+  if (video.currentTime >= 0.21 && poll.style.display === "none" && results.style.display === "none") {
     video.pause();
     poll.style.display = "flex";
   }
