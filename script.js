@@ -4,14 +4,20 @@ const results = document.getElementById('results');
 
 let votes = { "No Clue": 0, "Its Clobbering time": 0 };
 let totalVotes = 0;
-let pollShown = false; // prevent poll from showing multiple times
+let pollShown = false;
 
 // Show poll at 0.21s
 video.addEventListener('timeupdate', () => {
-  if (video.currentTime >= 0.21 && !pollShown) {
+  if (video.currentTime >= 0.21 && video.currentTime < 0.24 && !pollShown) {
     video.pause();
     poll.style.display = "flex";
-    pollShown = true; // only show once
+    pollShown = true;
+  }
+
+  // Hide poll at 0.24s if user didn’t vote
+  if (video.currentTime >= 0.24 && poll.style.display === "flex") {
+    poll.style.display = "none";
+    video.play();
   }
 });
 
