@@ -19,6 +19,7 @@ video {
 }
 
 .poll-overlay {
+  z-index: 9999;
   display: none;
   position: absolute;
   top: 30%;

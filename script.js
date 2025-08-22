@@ -2,15 +2,16 @@ const video = document.getElementById('myVideo');
 const poll = document.getElementById('poll');
 const results = document.getElementById('results');
 
-// Local vote tracker (resets when page reloads)
 let votes = { "No Clue": 0, "Its Clobbering time": 0 };
 let totalVotes = 0;
+let pollShown = false; // prevent poll from showing multiple times
 
-// Show poll at specific time (example: 0.21s)
+// Show poll at 0.21s
 video.addEventListener('timeupdate', () => {
-  if (video.currentTime >= 0.21 && poll.style.display === "none" && results.style.display === "none") {
+  if (video.currentTime >= 0.21 && !pollShown) {
     video.pause();
     poll.style.display = "flex";
+    pollShown = true; // only show once
   }
 });
 
@@ -34,7 +35,7 @@ function submitVote(choice) {
   poll.style.display = "none";
   results.style.display = "flex";
 
-  // Resume video after showing results for 3s
+  // Resume video after 3s
   setTimeout(() => {
     results.style.display = "none";
     video.play();
